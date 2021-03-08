@@ -42,14 +42,7 @@ class Body extends StatelessWidget {
             AlreadyHaveAnAccountCheck(
               login: false,
               press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return LoginScreen();
-                    },
-                  ),
-                );
+               Navigator.pushReplacementNamed(context, LoginScreen.routeName);
               },
             ),
             OrDivider(),
