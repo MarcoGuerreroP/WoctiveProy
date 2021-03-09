@@ -1,0 +1,10 @@
+{
+    "welcometowoctive" : "Bienvenido a Woctive",
+    "login" : "Iniciar sesion",
+    "signup" : "Registrarse",
+    "email" : "Correo electronico",
+    "password" : "Contraseña",
+    "confirmpassword" : "Confirmar contraseña",
+    "pleasereenterpassword" : "Vuelva a ingresar la contraseña",
+    "passworddoesnotmatch" : "Las contraseñas no coinciden"
+}

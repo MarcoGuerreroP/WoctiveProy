@@ -9,6 +9,7 @@ import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
+import 'package:flutter_auth/generated/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 
 // ignore: must_be_immutable
@@ -39,12 +40,16 @@ class Body extends StatelessWidget {
             ),
             RoundedInputField(
               keyboardtype: TextInputType.emailAddress,
+<<<<<<< HEAD
               hintText: "Your Email",
+=======
+              hintText: S.current.email,
+>>>>>>> c9eb3d707395040d9106b70e942353f5e502eefc
               onChanged: (value) {},
             ),
             RoundedPasswordField(
               keyboardType: TextInputType.text,
-              hintText: 'Password',
+              hintText: S.current.password,
               controller: _password,
               validator: (String value) {
                 if (value.isEmpty) {
@@ -60,6 +65,7 @@ class Body extends StatelessWidget {
             RoundedPasswordField(
               keyboardType: TextInputType.text,
               controller: _confirmpassword,
+<<<<<<< HEAD
               hintText: 'Confirm Password',
               validator: (String value) {
                 if (value.isEmpty) {
@@ -68,6 +74,16 @@ class Body extends StatelessWidget {
 
                 if (_password.text != _confirmpassword.text) {
                   return "Password does not match";
+=======
+              hintText: S.current.confirmpassword,
+              validator: (String value) {
+                if (value.isEmpty) {
+                  return S.current.pleasereenterpassword;
+                }
+
+                if (_password.text != _confirmpassword.text) {
+                  return S.current.passworddoesnotmatch;
+>>>>>>> c9eb3d707395040d9106b70e942353f5e502eefc
                 }
 
                 return null;
@@ -77,8 +93,9 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-              text: "SIGNUP",
+              text: S.current.signup,
               press: () {
+<<<<<<< HEAD
                 auth
                     .createUserWithEmailAndPassword(
                         email: _email, password: _pass)
@@ -86,6 +103,12 @@ class Body extends StatelessWidget {
                   Navigator.pushReplacementNamed(
                       context, CheckPageValidator.routeName);
                 });
+=======
+                auth.createUserWithEmailAndPassword(
+                    email: _email, password: _pass);
+                Navigator.popAndPushNamed(
+                    context, CheckPageValidator.routeName);
+>>>>>>> c9eb3d707395040d9106b70e942353f5e502eefc
               },
             ),
             SizedBox(height: size.height * 0.03),
