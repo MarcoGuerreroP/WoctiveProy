@@ -40,11 +40,11 @@ class Body extends StatelessWidget {
             ),
             RoundedInputField(
               keyboardtype: TextInputType.emailAddress,
-<<<<<<< HEAD
-              hintText: "Your Email",
-=======
+
+              
+
               hintText: S.current.email,
->>>>>>> c9eb3d707395040d9106b70e942353f5e502eefc
+
               onChanged: (value) {},
             ),
             RoundedPasswordField(
@@ -62,19 +62,9 @@ class Body extends StatelessWidget {
                 _pass = value.trim();
               },
             ),
-            RoundedPasswordField(
+                RoundedPasswordField(
               keyboardType: TextInputType.text,
               controller: _confirmpassword,
-<<<<<<< HEAD
-              hintText: 'Confirm Password',
-              validator: (String value) {
-                if (value.isEmpty) {
-                  return 'Please re-enter password';
-                }
-
-                if (_password.text != _confirmpassword.text) {
-                  return "Password does not match";
-=======
               hintText: S.current.confirmpassword,
               validator: (String value) {
                 if (value.isEmpty) {
@@ -83,7 +73,6 @@ class Body extends StatelessWidget {
 
                 if (_password.text != _confirmpassword.text) {
                   return S.current.passworddoesnotmatch;
->>>>>>> c9eb3d707395040d9106b70e942353f5e502eefc
                 }
 
                 return null;
@@ -95,7 +84,7 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: S.current.signup,
               press: () {
-<<<<<<< HEAD
+
                 auth
                     .createUserWithEmailAndPassword(
                         email: _email, password: _pass)
@@ -103,12 +92,12 @@ class Body extends StatelessWidget {
                   Navigator.pushReplacementNamed(
                       context, CheckPageValidator.routeName);
                 });
-=======
+
                 auth.createUserWithEmailAndPassword(
                     email: _email, password: _pass);
                 Navigator.popAndPushNamed(
                     context, CheckPageValidator.routeName);
->>>>>>> c9eb3d707395040d9106b70e942353f5e502eefc
+
               },
             ),
             SizedBox(height: size.height * 0.03),
