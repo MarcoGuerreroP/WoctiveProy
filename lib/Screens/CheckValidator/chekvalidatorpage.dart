@@ -23,7 +23,7 @@ class _CheckPageValidatorState extends State<CheckPageValidator> {
 
     user.sendEmailVerification();
 
-    timer = Timer.periodic(Duration(seconds: 2), (timer) { 
+    timer = Timer.periodic(Duration(seconds: 5), (timer) { 
       checkEmailVerifield();
     });
     super.initState();
@@ -40,7 +40,7 @@ class _CheckPageValidatorState extends State<CheckPageValidator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AlertDialog(content: Text('Ha sido enviado un correo de verficacion a este email: ${user.email} por favor de verificarlo'),)
+      body: Center(child: Text('Ha sido enviado un correo de verficacion a este email: ${user.email} por favor de verificarlo'),)
     );
   }
 
@@ -50,7 +50,7 @@ class _CheckPageValidatorState extends State<CheckPageValidator> {
     await user.reload();
       if(user.emailVerified){
         timer.cancel();
-        Navigator.pushNamed(context, HomeScreen.routeName);
+        Navigator.popAndPushNamed(context, HomeScreen.routeName);
       }
   }
 }

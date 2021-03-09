@@ -15,14 +15,11 @@ import 'package:flutter_svg/svg.dart';
 class Body extends StatelessWidget {
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmpassword = TextEditingController();
-  
+
   String _email;
   String _pass;
   final auth = FirebaseAuth.instance;
-  
-  
-  
-  
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -43,59 +40,59 @@ class Body extends StatelessWidget {
             RoundedInputField(
               keyboardtype: TextInputType.emailAddress,
               hintText: "Your Email",
-              onChanged: (value) {
-                
-              },
+              onChanged: (value) {},
             ),
             RoundedPasswordField(
               keyboardType: TextInputType.text,
               hintText: 'Password',
               controller: _password,
-              validator: (String value){
-                if(value.isEmpty){
+              validator: (String value) {
+                if (value.isEmpty) {
                   return 'Please a Enter Password';
-                }else{
-                    return null;
+                } else {
+                  return null;
                 }
               },
               onChanged: (value) {
                 _pass = value.trim();
-
               },
             ),
             RoundedPasswordField(
               keyboardType: TextInputType.text,
               controller: _confirmpassword,
               hintText: 'Confirm Password',
-              validator:(String value){
-                      if(value.isEmpty)
-                      {
-                        return 'Please re-enter password';
-                      }
-                     
+              validator: (String value) {
+                if (value.isEmpty) {
+                  return 'Please re-enter password';
+                }
 
-                      if(_password.text!=_confirmpassword.text){
-                        return "Password does not match";
-                      }
+                if (_password.text != _confirmpassword.text) {
+                  return "Password does not match";
+                }
 
-                      return null;
-                    },
-              onChanged: (value) {_email = value.trim();},
-              
+                return null;
+              },
+              onChanged: (value) {
+                _email = value.trim();
+              },
             ),
             RoundedButton(
               text: "SIGNUP",
               press: () {
-                auth.createUserWithEmailAndPassword(email: _email, password: _pass)
-                ;
-                Navigator.popAndPushNamed(context, CheckPageValidator.routeName);
+                auth
+                    .createUserWithEmailAndPassword(
+                        email: _email, password: _pass)
+                    .then((_) {
+                  Navigator.pushReplacementNamed(
+                      context, CheckPageValidator.routeName);
+                });
               },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
               login: false,
               press: () {
-               Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+                Navigator.pushReplacementNamed(context, LoginScreen.routeName);
               },
             ),
             OrDivider(),

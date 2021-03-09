@@ -33,6 +33,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
                     child: Image(
                       fit: BoxFit.cover,
                       image: AssetImage('assets/images/pf.png'),
+                      height: 100,
+                      width: 100,
                     ),
                   ),
                 ),
