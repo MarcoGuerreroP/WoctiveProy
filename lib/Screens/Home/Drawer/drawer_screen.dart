@@ -1,13 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class DrawerScreen extends StatefulWidget {
+class DrawerScreen extends StatefulWidget { 
+  
+
+ 
   @override
+  
   _DrawerScreenState createState() => _DrawerScreenState();
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
+  
+  
   @override
   Widget build(BuildContext context) {
+    final auth = FirebaseAuth.instance;
+
+
     return Container(
       color: Colors.black,
       child: Padding(
@@ -72,9 +82,14 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 SizedBox(
                   width: 10,
                 ),
-                Text(
-                  'Cerrar Sesion',
-                  style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                TextButton(
+                  onPressed: (){
+                    auth.signOut();
+                  },
+                  child: Text(
+                    'Cerrar Sesion',
+                    style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                  ),
                 )
               ],
             )

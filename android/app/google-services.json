@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "146046632821",
+    "project_id": "woctiveproy",
+    "storage_bucket": "woctiveproy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146046632821:android:7883817398126eb8bf493c",
+        "android_client_info": {
+          "package_name": "com.flutterwoctive.appdispositivos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146046632821-82nvtnkj20f3hio80nf1i1ljoud42gb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterwoctive.appdispositivos",
+            "certificate_hash": "032d5d65f4d579719715f7991e6fee93b5df03e1"
+          }
+        },
+        {
+          "client_id": "146046632821-8nik1b21jookhtd36ospgrl8v0r1e5jp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWCCLs-_qRawqZruGRsFJz8peCgCvW32s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146046632821-8nik1b21jookhtd36ospgrl8v0r1e5jp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
