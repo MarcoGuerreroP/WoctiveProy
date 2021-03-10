@@ -9,20 +9,18 @@ import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
+import 'package:flutter_auth/generated/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 
 // ignore: must_be_immutable
 class Body extends StatelessWidget {
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmpassword = TextEditingController();
-  
+
   String _email;
   String _pass;
   final auth = FirebaseAuth.instance;
-  
-  
-  
-  
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -42,60 +40,57 @@ class Body extends StatelessWidget {
             ),
             RoundedInputField(
               keyboardtype: TextInputType.emailAddress,
-              hintText: "Your Email",
-              onChanged: (value) {
-                
-              },
+              hintText: S.current.email,
+              onChanged: (value) {},
             ),
             RoundedPasswordField(
               keyboardType: TextInputType.text,
-              hintText: 'Password',
+              hintText: S.current.password,
               controller: _password,
-              validator: (String value){
-                if(value.isEmpty){
+              validator: (String value) {
+                if (value.isEmpty) {
                   return 'Please a Enter Password';
-                }else{
-                    return null;
+                } else {
+                  return null;
                 }
               },
               onChanged: (value) {
                 _pass = value.trim();
-
               },
             ),
             RoundedPasswordField(
               keyboardType: TextInputType.text,
               controller: _confirmpassword,
-              hintText: 'Confirm Password',
-              validator:(String value){
-                      if(value.isEmpty)
-                      {
-                        return 'Please re-enter password';
-                      }
-                     
+              hintText: S.current.confirmpassword,
+              validator: (String value) {
+                if (value.isEmpty) {
+                  return 'Please re-enter password';
+                }
 
-                      if(_password.text!=_confirmpassword.text){
-                        return "Password does not match";
-                      }
+                if (_password.text != _confirmpassword.text) {
+                  return "Password does not match";
+                }
 
-                      return null;
-                    },
-              onChanged: (value) {_email = value.trim();},
-              
+                return null;
+              },
+              onChanged: (value) {
+                _email = value.trim();
+              },
             ),
             RoundedButton(
-              text: "SIGNUP",
+              text: S.current.signup,
               press: () {
-                auth.createUserWithEmailAndPassword(email: _email, password: _pass)
-                ;
-                Navigator.popAndPushNamed(context, CheckPageValidator.routeName);
+                auth.createUserWithEmailAndPassword(
+                    email: _email, password: _pass);
+                Navigator.popAndPushNamed(
+                    context, CheckPageValidator.routeName);
               },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
               login: false,
               press: () {
-               Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+                Navigator.pushReplacementNamed(context, LoginScreen.routeName);
               },
             ),
             OrDivider(),
