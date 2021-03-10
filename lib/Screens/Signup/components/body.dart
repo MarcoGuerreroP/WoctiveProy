@@ -64,11 +64,11 @@ class Body extends StatelessWidget {
               hintText: S.current.confirmpassword,
               validator: (String value) {
                 if (value.isEmpty) {
-                  return 'Please re-enter password';
+                  return S.current.pleasereenterpassword;
                 }
 
                 if (_password.text != _confirmpassword.text) {
-                  return "Password does not match";
+                  return S.current.passworddoesnotmatch;
                 }
 
                 return null;
