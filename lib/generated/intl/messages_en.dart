@@ -27,8 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "password" : MessageLookupByLibrary.simpleMessage("Password"),
     "passworddoesnotmatch" : MessageLookupByLibrary.simpleMessage("Password does not match"),
     "pleasereenterpassword" : MessageLookupByLibrary.simpleMessage("Please re-enter password"),
+    "pleasesupplyavalidemail" : MessageLookupByLibrary.simpleMessage("Please supply a valid email"),
     "signup" : MessageLookupByLibrary.simpleMessage("Sign up"),
-    "welcometowoctive" : MessageLookupByLibrary.simpleMessage("Welcome to Woctive"),
-    "pleasesupplyavalidemail" : MessageLookupByLibrary.simpleMessage("Please supply a valid email")
+    "welcometowoctive" : MessageLookupByLibrary.simpleMessage("Welcome to Woctive")
   };
 }
