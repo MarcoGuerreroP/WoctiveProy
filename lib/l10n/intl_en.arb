@@ -6,5 +6,6 @@
     "password" : "Password",
     "confirmpassword" : "Confirm Password",
     "pleasereenterpassword" : "Please re-enter password",
-    "passworddoesnotmatch" : "Password does not match"
+    "passworddoesnotmatch" : "Password does not match",
+    "pleasesupplyavalidemail" : "Please supply a valid email"
 }

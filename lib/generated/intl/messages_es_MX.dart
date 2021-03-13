@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "passworddoesnotmatch" : MessageLookupByLibrary.simpleMessage("Las contraseñas no coinciden"),
     "pleasereenterpassword" : MessageLookupByLibrary.simpleMessage("Vuelva a ingresar la contraseña"),
     "signup" : MessageLookupByLibrary.simpleMessage("Registrarse"),
-    "welcometowoctive" : MessageLookupByLibrary.simpleMessage("Bienvenido a Woctive")
+    "welcometowoctive" : MessageLookupByLibrary.simpleMessage("Bienvenido a Woctive"),
+    "pleasesupplyavalidemail" : MessageLookupByLibrary.simpleMessage("Ingrese un email valido")
+
   };
 }

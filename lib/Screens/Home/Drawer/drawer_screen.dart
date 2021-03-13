@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 
 class DrawerScreen extends StatefulWidget { 
@@ -15,11 +15,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
   
   @override
   Widget build(BuildContext context) {
-    final auth = FirebaseAuth.instance;
+   
 
 
     return Container(
-      color: Colors.black,
+      color: Colors.white,
       child: Padding(
         padding: EdgeInsets.only(top: 50, left: 40, bottom: 70),
         child: Column(
@@ -30,12 +30,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 CircleAvatar(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
-                    child: Image(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/images/pf.png'),
-                      height: 100,
-                      width: 100,
-                    ),
+                    
                   ),
                 ),
                 SizedBox(
@@ -86,7 +81,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 ),
                 TextButton(
                   onPressed: (){
-                    auth.signOut();
+                    
                   },
                   child: Text(
                     'Cerrar Sesion',

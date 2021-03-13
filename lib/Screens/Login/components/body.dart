@@ -1,6 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Data/services/authentication.dart';
 
 import 'package:flutter_auth/Screens/Home/home_screen.dart';
 
@@ -16,58 +16,80 @@ export 'package:flutter_auth/Screens/Login/components/body.dart';
 
 // ignore: must_be_immutable
 class Body extends StatelessWidget {
-  final auth = FirebaseAuth.instance;
-  String _email, _password;
+  final AuthService _auth = AuthService();
+
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final TextEditingController _emailController = TextEditingController();
+
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Background(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              "LOGIN",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: size.height * 0.03),
-            SvgPicture.asset(
-              "assets/icons/login.svg",
-              height: size.height * 0.35,
-            ),
-            SizedBox(height: size.height * 0.03),
-            RoundedInputField(
-              hintText: S.current.email,
-              onChanged: (value) {
-                _email = value.trim();
-              },
-              keyboardtype: TextInputType.emailAddress,
-            ),
-            RoundedPasswordField(
-              keyboardType: TextInputType.visiblePassword,
-              onChanged: (value) {
-                _password = value.trim();
-              },
-            ),
-            RoundedButton(
-              text: S.current.login,
-              press: () {
-                auth.signInWithEmailAndPassword(
-                    email: _email, password: _password);
+    return Form(
+      key: _formKey,
+      child: Background(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "LOGIN",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: size.height * 0.03),
+              SvgPicture.asset(
+                "assets/icons/login.svg",
+                height: size.height * 0.35,
+              ),
+              SizedBox(height: size.height * 0.03),
+              RoundedInputField(
+                hintText: S.current.email,
+                onChanged: (value) {
+                  _emailController.text = value.trim();
+                },
+                keyboardtype: TextInputType.emailAddress,
+              ),
+              RoundedPasswordField(
+                keyboardType: TextInputType.visiblePassword,
+                onChanged: (value) {
+                  _passwordController.text = value.trim();
+                },
+              ),
+              RoundedButton(
+                text: S.current.login,
+                press: () async {
+                  if (_formKey.currentState.validate()) {
+                    dynamic result = await _auth.signIn(
+                        _emailController.text, _passwordController.text);
+                    if (result != null) {
+                      setState(() {
+                        Navigator.pushReplacementNamed(
+                            context, HomeScreen.routeName);
+                      });
+                    } else {
+                      S.current.login;
+                    }
 
-                Navigator.pushReplacementNamed(context, HomeScreen.routeName);
-              },
-            ),
-            SizedBox(height: size.height * 0.03),
-            AlreadyHaveAnAccountCheck(
-              press: () {
-                Navigator.pushReplacementNamed(context, SignUpScreen.routeName);
-              },
-            ),
-          ],
+                    Navigator.pushReplacementNamed(
+                        context, HomeScreen.routeName);
+                  }
+                },
+              ),
+              SizedBox(height: size.height * 0.03),
+              AlreadyHaveAnAccountCheck(
+                press: () {
+                  Navigator.pushReplacementNamed(
+                      context, SignUpScreen.routeName);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+
+  void setState(Null Function() param0) {}
 }

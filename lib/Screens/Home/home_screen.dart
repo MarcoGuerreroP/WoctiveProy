@@ -67,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         decoration: TextDecoration.none),
                   ),
                   Container(),
+                  
                 ],
               ),
             ),
@@ -101,23 +102,23 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class NewPadding extends StatelessWidget {
-  final String image1;
+ 
   final String text1;
-  final String image2;
+  
   final String text2;
 
   const NewPadding({
     Key key,
-    this.image1,
+    
     this.text1,
-    this.image2,
+   
     this.text2,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 35),
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -139,15 +140,11 @@ class NewPadding extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  child: Image(
-                    height: 100,
-                    width: 100,
-                    image: AssetImage(image1),
-                  ),
+                  padding: EdgeInsets.symmetric(vertical: 1),
+                 
                 ),
                 Text(
-                  text1,
+                  'Menu',
                   style: TextStyle(
                       color: Colors.black87,
                       fontSize: 15,
@@ -174,15 +171,11 @@ class NewPadding extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  child: Image(
-                    height: 100,
-                    width: 100,
-                    image: AssetImage(image2),
-                  ),
+                  padding: EdgeInsets.symmetric(vertical: 1),
+                  
                 ),
                 Text(
-                  text2,
+                  'items',
                   style: TextStyle(
                       color: Colors.black87,
                       fontSize: 15,

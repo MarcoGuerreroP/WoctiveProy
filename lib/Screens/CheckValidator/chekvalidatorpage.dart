@@ -40,7 +40,11 @@ class _CheckPageValidatorState extends State<CheckPageValidator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Ha sido enviado un correo de verficacion a este email: ${user.email} por favor de verificarlo'),)
+      backgroundColor: Colors.white,
+      body: AlertDialog(content: Text('Ha sido enviado un correo de verficacion a este email: ${user.email} por favor de verificarlo',
+      style: TextStyle(color:Colors.black ),),
+      
+    ),
     );
   }
 

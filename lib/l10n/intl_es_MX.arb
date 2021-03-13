@@ -6,5 +6,6 @@
     "password" : "Contraseña",
     "confirmpassword" : "Confirmar contraseña",
     "pleasereenterpassword" : "Vuelva a ingresar la contraseña",
-    "passworddoesnotmatch" : "Las contraseñas no coinciden"
+    "passworddoesnotmatch" : "Las contraseñas no coinciden",
+    "pleasesupplyavalidemail" : "Ingresa un email valido"
 }

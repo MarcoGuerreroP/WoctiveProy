@@ -114,6 +114,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Please supply a valid email`
+  String get pleasesupplyavalidemail {
+    return Intl.message(
+      'Please supply a valid email',
+      name: 'pleasesupplyavalidemail',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
