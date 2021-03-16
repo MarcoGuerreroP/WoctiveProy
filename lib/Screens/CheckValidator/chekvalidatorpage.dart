@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Home/home_screen.dart';
+import 'package:flutter_auth/Screens/Home/homestack.dart';
+
 
 
 class CheckPageValidator extends StatefulWidget {
@@ -54,7 +55,7 @@ class _CheckPageValidatorState extends State<CheckPageValidator> {
     await user.reload();
       if(user.emailVerified){
         timer.cancel();
-        Navigator.popAndPushNamed(context, HomeScreen.routeName);
+        Navigator.popAndPushNamed(context, HomeStack.routeName);
       }
   }
 }

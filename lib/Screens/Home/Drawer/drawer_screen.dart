@@ -1,11 +1,20 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Data/services/authentication.dart';
+
+
 
 class DrawerScreen extends StatefulWidget {
+  
+  
   @override
   _DrawerScreenState createState() => _DrawerScreenState();
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
+
+final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,12 +27,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
             Row(
               children: <Widget>[
                 CircleAvatar(
+                  backgroundColor: Colors.blue,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
-                    child: Image(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/Group.jpg'),
-                    ),
+                   
                   ),
                 ),
                 SizedBox(
@@ -93,9 +100,16 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 SizedBox(
                   width: 10,
                 ),
-                Text(
-                  'Log out',
-                  style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                TextButton(
+                  onPressed: (){ _auth.signOut(context);
+                  
+                  
+                    
+
+                  },
+                  child:
+                  Text('Log out',style: TextStyle(color: Colors.white.withOpacity(0.5)),),
+                  
                 )
               ],
             )
@@ -104,6 +118,13 @@ class _DrawerScreenState extends State<DrawerScreen> {
       ),
     );
   }
+  
+
+
+
+
+
+
 }
 
 class NewRow extends StatelessWidget {
@@ -134,4 +155,12 @@ class NewRow extends StatelessWidget {
       ],
     );
   }
+
+
+  
+
+
+
+
+
 }

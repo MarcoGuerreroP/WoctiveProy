@@ -3,15 +3,19 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
+  static final routeName = 'home';
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  
   double xOffset = 0;
   double yOffset = 0;
 
   bool isDrawerOpen = false;
+  
 
   @override
+ 
   Widget build(BuildContext context) {
     return AnimatedContainer(
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
@@ -30,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 50,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
+              margin: EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -124,7 +128,7 @@ class NewPadding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 35),
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
