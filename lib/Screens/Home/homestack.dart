@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Home/Drawer/drawer_screen.dart';
+// import 'package:flutter_auth/Screens/Home/Drawer/drawer_screen.dart';
 import 'package:flutter_auth/Screens/Home/home_screen.dart';
 
 
@@ -14,7 +14,7 @@ class HomeStack extends StatelessWidget {
        
          body:Stack(
             children: [
-              DrawerScreen(),
+              // DrawerScreen(),
               HomeScreen(),
               
               

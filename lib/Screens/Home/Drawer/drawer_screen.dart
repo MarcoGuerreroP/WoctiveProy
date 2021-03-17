@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Data/services/authentication.dart';
+import 'package:flutter_auth/Screens/Login/login_screen.dart';
 
 
 
 class DrawerScreen extends StatefulWidget {
+  final Widget child;
+  DrawerScreen({key, this.child}): super(key:key);
   
   
   @override
@@ -12,6 +15,9 @@ class DrawerScreen extends StatefulWidget {
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
+  
+  
+
 
 final AuthService _auth = AuthService();
 
@@ -102,6 +108,8 @@ final AuthService _auth = AuthService();
                 ),
                 TextButton(
                   onPressed: (){ _auth.signOut(context);
+                  Navigator.pushReplacementNamed(
+                        context, LoginScreen.routeName);
                   
                   
                     

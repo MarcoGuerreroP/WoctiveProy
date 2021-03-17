@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_auth/Screens/Home/Drawer/drawer_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -38,29 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  isDrawerOpen
-                      ? GestureDetector(
-                          child: Icon(Icons.arrow_back_ios),
-                          onTap: () {
-                            setState(() {
-                              xOffset = 0;
-                              yOffset = 0;
-                              isDrawerOpen = false;
-                            });
-                          },
-                        )
-                      : GestureDetector(
-                          child: Icon(Icons.menu),
-                          onTap: () {
-                            setState(() {
-                              xOffset = 290;
-                              yOffset = 80;
-                              isDrawerOpen = true;
-                            });
-                          },
-                        ),
+                  
                   Text(
-                    'Bienvenido',
+                    'Menu',
                     style: TextStyle(
                         fontSize: 20,
                         color: Colors.black87,

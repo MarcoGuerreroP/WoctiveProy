@@ -1,8 +1,9 @@
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Data/services/authentication.dart';
+import 'package:flutter_auth/Screens/Home/home2.dart';
 
-import 'package:flutter_auth/Screens/Home/home_screen.dart';
+// import 'package:flutter_auth/Screens/Home/home_screen.dart';
 
 import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
@@ -66,14 +67,14 @@ class Body extends StatelessWidget {
                     if (result != null) {
                       setState(() {
                         Navigator.pushReplacementNamed(
-                            context, HomeScreen.routeName);
+                            context, Home2.routeName);
                       });
                     } else {
                       S.current.login;
                     }
 
                     Navigator.pushReplacementNamed(
-                        context, HomeScreen.routeName);
+                        context, Home2.routeName);
                   }
                 },
               ),
