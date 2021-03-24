@@ -61,20 +61,43 @@ class Body extends StatelessWidget {
               RoundedButton(
                 text: S.current.login,
                 press: () async {
-                  if (_formKey.currentState.validate()) {
-                    dynamic result = await _auth.signIn(
-                        _emailController.text, _passwordController.text);
-                    if (result != null) {
-                      setState(() {
-                        Navigator.pushReplacementNamed(
-                            context, Home2.routeName);
-                      });
+                  if (_emailController.text.isEmpty ||
+                      _passwordController.text.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text(
+                            'Falta informacion por agregar, vuelve a intentarlo'),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                    return;
+                  }
+                  {
+                    if (_formKey.currentState.validate()) {
+                      dynamic result = await _auth.signIn(
+                          _emailController.text, _passwordController.text);
+                      if (result != null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: const Text('Inicion de sesion exitoso'),
+                            backgroundColor: Colors.green,
+                          ),
+                        );
+                        setState(() {
+                          Navigator.pushReplacementNamed(
+                              context, Home2.routeName);
+                        });
+                      }
                     } else {
-                      S.current.login;
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: const Text('Error'),
+                          backgroundColor: Colors.red,
+                        ),
+                      );
                     }
 
-                    Navigator.pushReplacementNamed(
-                        context, Home2.routeName);
+                    Navigator.pushReplacementNamed(context, Home2.routeName);
                   }
                 },
               ),

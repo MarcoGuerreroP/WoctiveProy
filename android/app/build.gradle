@@ -46,6 +46,7 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true 
     }
 
     buildTypes {
@@ -72,5 +73,7 @@ dependencies { def multidex_version = "2.0.1"
     implementation  'com.google.firebase:firebase-auth:18.0.0'
     // implementation  'com.google.firebase:firebase-storage:18.0.0'
     implementation  'com.google.firebase:firebase-core:17.0.0'
-
+    implementation 'androidx.multidex:multidex:2.0.1' 
 }
+
+apply plugin: 'com.google.gms.google-services'

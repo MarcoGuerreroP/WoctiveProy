@@ -22,20 +22,19 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   final AuthService _auth = AuthService();
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _passwordController = TextEditingController();
 
   final TextEditingController _confirmpasswordController =
       TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Form(
-      key: _formKey,
+      key: _scaffoldkey,
       child: Background(
         child: SingleChildScrollView(
           child: Column(
@@ -88,17 +87,37 @@ class _BodyState extends State<Body> {
               RoundedButton(
                 text: S.current.signup,
                 press: () async {
-                  if (_formKey.currentState.validate()) {
-                    dynamic result = await _auth.signUp(
-                        _emailController.text, _passwordController.text);
-                    if (result == null) {
-                      setState(() {
-                        S.current.pleasesupplyavalidemail;
-                      });
-                    } else {
-                      Navigator.pushReplacementNamed(
-                          context, CheckPageValidator.routeName);
-                    }
+                  if (_emailController.text.isEmpty ||
+                      _passwordController.text.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text(
+                            'Falta informacion por agregar, vuelve a intentarlo'),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                    return;
+                  }
+                  if (_confirmpasswordController.text.isEmpty ||
+                      _confirmpasswordController.text !=
+                          _passwordController.text) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          content: const Text(
+                              'Las contraseñas no coinciden, vuelve a intentarlo'),
+                          backgroundColor: Colors.red),
+                    );
+                    return;
+                  }
+                  dynamic result = await _auth.signUp(
+                      _emailController.text, _passwordController.text);
+                  if (result == null) {
+                    setState(() {
+                      S.current.pleasesupplyavalidemail;
+                    });
+                  } else {
+                    Navigator.pushReplacementNamed(
+                        context, CheckPageValidator.routeName);
                   }
                 },
               ),
