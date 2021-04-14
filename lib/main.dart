@@ -6,11 +6,11 @@ import 'package:flutter_auth/Routes/routes.dart';
 import 'package:flutter_auth/Screens/Home/home_screen.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
-
 import 'package:flutter_auth/constants.dart';
+import 'package:flutter_auth/localization/localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 import 'generated/l10n.dart';
+import 'localization/localization_constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,27 +18,79 @@ void main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  static void setLocale(BuildContext context, Locale locale) {
+    _MyAppState state = context.findAncestorStateOfType<_MyAppState>();
+    state.setLocale(locale);
+  }
+
   // This widget is the root of your application.
   @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Locale _locale;
+
+  void setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
+
+  @override
+  void didChangeDependencies() {
+    getLocale().then((locale) {
+      setState(() {
+        this._locale = locale;
+      });
+    });
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Auth',
-        localizationsDelegates: [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          S.delegate,
-        ],
-        supportedLocales: S.delegate.supportedLocales,
-        theme: ThemeData(
-          primaryColor: kPrimaryColor,
-          scaffoldBackgroundColor: Colors.grey.shade900,
+    if (_locale == null) {
+      return Container(
+        child: Center(
+          child: CircularProgressIndicator(),
         ),
-        home: WelcomeScreen(),
-        initialRoute: WelcomeScreen.routeName,
-        routes: appRoutes);
+      );
+    } else {
+      return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Auth',
+          locale: _locale,
+          supportedLocales: [
+            Locale('en', 'US'),
+            Locale('es', 'MX'),
+            Locale('pt', 'PT'),
+          ],
+          localizationsDelegates: [
+            LanguageLocalization.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            S.delegate,
+          ],
+          localeResolutionCallback: (deviceLocale, supportedLocales) {
+            for (var locale in supportedLocales) {
+              if (locale.languageCode == deviceLocale.languageCode &&
+                  locale.countryCode == deviceLocale.countryCode) {
+                return deviceLocale;
+              }
+            }
+
+            return supportedLocales.first;
+          },
+          theme: ThemeData(
+            primaryColor: kPrimaryColor,
+            scaffoldBackgroundColor: Colors.grey.shade900,
+          ),
+          home: WelcomeScreen(),
+          initialRoute: WelcomeScreen.routeName,
+          routes: appRoutes);
+    }
   }
 }
 
