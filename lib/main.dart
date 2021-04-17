@@ -59,6 +59,7 @@ class _MyAppState extends State<MyApp> {
     } else {
       return MaterialApp(
           debugShowCheckedModeBanner: false,
+          
           title: 'Flutter Auth',
           locale: _locale,
           supportedLocales: [
@@ -85,7 +86,7 @@ class _MyAppState extends State<MyApp> {
           },
           theme: ThemeData(
             primaryColor: kPrimaryColor,
-            scaffoldBackgroundColor: Colors.grey.shade900,
+            scaffoldBackgroundColor: Colors.black,
           ),
           home: WelcomeScreen(),
           initialRoute: WelcomeScreen.routeName,
