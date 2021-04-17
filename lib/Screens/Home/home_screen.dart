@@ -8,15 +8,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  
   double xOffset = 0;
   double yOffset = 0;
 
   bool isDrawerOpen = false;
-  
 
   @override
- 
   Widget build(BuildContext context) {
     return AnimatedContainer(
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
@@ -24,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ..rotateZ(isDrawerOpen ? -50 : 0),
       duration: Duration(milliseconds: 200),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.black,
         borderRadius:
             isDrawerOpen ? BorderRadius.circular(40) : BorderRadius.circular(0),
       ),
@@ -39,12 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  
                   Text(
-                    'Menu',
+                    'Prioridades',
                     style: TextStyle(
                         fontSize: 20,
-                        color: Colors.black87,
+                        color: Colors.white,
                         decoration: TextDecoration.none),
                   ),
                   Container(),
