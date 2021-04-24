@@ -1,7 +1,9 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Collection/Firestore.dart';
+// import 'package:flutter_auth/Collection/Firestore.dart';
 import 'package:flutter_auth/Data/services/authentication.dart';
 import 'package:flutter_auth/Screens/CheckValidator/chekvalidatorpage.dart';
 // import 'package:flutter_auth/Screens/Home/home_screen.dart';
@@ -24,7 +26,8 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   final AuthService _auth = AuthService();
-
+  final CollecionService _colleccion = CollecionService();
+  
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _userController = TextEditingController();
@@ -34,6 +37,8 @@ class _BodyState extends State<Body> {
   final TextEditingController _confirmpasswordController =
       TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
+
+  bool isAdmin = false;
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +100,19 @@ class _BodyState extends State<Body> {
                   return null;
                 },
               ),
+              Row(
+                children: [
+                  Text('Eres Admnistrador'),
+                  Checkbox(value: isAdmin, onChanged: (bool newValue){
+                    setState(() {
+                        isAdmin = newValue;
+                    });
+
+                  }, activeColor: Colors.blue,
+                  )
+                ],
+              ),
+
               RoundedButton(
                 text: S.current.signup,
                 press: () async {
@@ -131,10 +149,10 @@ class _BodyState extends State<Body> {
                         context, CheckPageValidator.routeName);
                   }
                   try {
-                    await Firebase.initializeApp();
+                    // await Firebase.initializeApp();
                     User updateUser = FirebaseAuth.instance.currentUser;
                     updateUser.updateProfile(displayName: _userController.text);
-                    userSetup(_userController.text);
+                     _colleccion.userSetup(_userController.text);
                   } catch (e) {
                     print(e.toString());
                   }

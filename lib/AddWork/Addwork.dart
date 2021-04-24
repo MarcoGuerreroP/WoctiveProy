@@ -1,8 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/AddWork/button_widget.dart';
-import 'package:flutter_auth/Collection/AddworkFireStore.dart';
+// import 'package:flutter_auth/Collection/AddworkFireStore.dart';
 import 'package:intl/intl.dart';
 
 class AddWork extends StatefulWidget {
@@ -59,9 +59,12 @@ class _AddWorkState extends State<AddWork> {
               text: getText(),
               onClicked: () => pickDateTime(context),
             ),
-            FlatButton(
-              padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
-              color: Colors.white,
+            TextButton(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
+              primary: Colors.white,
+              ),
+              
               child: Text("Equipo"),
               onPressed: () async {
                 try {

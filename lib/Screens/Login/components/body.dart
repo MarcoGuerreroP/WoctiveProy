@@ -1,5 +1,6 @@
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_auth/Data/services/authentication.dart';
 import 'package:flutter_auth/Screens/Home/home2.dart';
 
@@ -18,7 +19,7 @@ export 'package:flutter_auth/Screens/Login/components/body.dart';
 // ignore: must_be_immutable
 class Body extends StatelessWidget {
   final AuthService _auth = AuthService();
-
+  // final CollecionService _colleccion = CollecionService();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController();

@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/Data/services/authentication.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 
-Future firebaseUsuario() async {
-  final usuario = await FirebaseAuth.instance.currentUser.email;
-  return usuario;
-}
+
 
 class DrawerScreen extends StatefulWidget {
   final Widget child;
@@ -40,14 +37,14 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   width: 10,
                 ),
                 Text(
-                  FirebaseAuth.instance.currentUser.email,
+                  FirebaseAuth.instance.currentUser.displayName,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 11,
                       fontWeight: FontWeight.bold),
                 ),
                 FutureBuilder(
-                    future: firebaseUsuario(),
+                    future: _auth.firebaseUsuario(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return Text(snapshot.data);
