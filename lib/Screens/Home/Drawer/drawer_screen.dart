@@ -1,25 +1,23 @@
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Data/services/authentication.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 
-
+Future firebaseUsuario() async {
+  final usuario = await FirebaseAuth.instance.currentUser.email;
+  return usuario;
+}
 
 class DrawerScreen extends StatefulWidget {
   final Widget child;
-  DrawerScreen({key, this.child}): super(key:key);
-  
-  
+  DrawerScreen({key, this.child}) : super(key: key);
+
   @override
   _DrawerScreenState createState() => _DrawerScreenState();
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
-  
-  
-
-
-final AuthService _auth = AuthService();
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -35,20 +33,28 @@ final AuthService _auth = AuthService();
                 CircleAvatar(
                   backgroundColor: Colors.blue,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                   
+                    borderRadius: BorderRadius.circular(0),
                   ),
                 ),
                 SizedBox(
                   width: 10,
                 ),
                 Text(
-                  'Gilberto Rodriguez',
+                  FirebaseAuth.instance.currentUser.email,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22,
+                      fontSize: 11,
                       fontWeight: FontWeight.bold),
                 ),
+                FutureBuilder(
+                    future: firebaseUsuario(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return Text(snapshot.data);
+                      } else {
+                        return CircularProgressIndicator();
+                      }
+                    }),
               ],
             ),
             Column(
@@ -107,17 +113,15 @@ final AuthService _auth = AuthService();
                   width: 10,
                 ),
                 TextButton(
-                  onPressed: (){ _auth.signOut(context);
-                  Navigator.pushReplacementNamed(
+                  onPressed: () {
+                    _auth.signOut(context);
+                    Navigator.pushReplacementNamed(
                         context, LoginScreen.routeName);
-                  
-                  
-                    
-
                   },
-                  child:
-                  Text('Log out',style: TextStyle(color: Colors.white.withOpacity(0.5)),),
-                  
+                  child: Text(
+                    'Log out',
+                    style: TextStyle(color: Colors.white.withOpacity(0.5)),
+                  ),
                 )
               ],
             )
@@ -126,13 +130,6 @@ final AuthService _auth = AuthService();
       ),
     );
   }
-  
-
-
-
-
-
-
 }
 
 class NewRow extends StatelessWidget {
@@ -163,12 +160,4 @@ class NewRow extends StatelessWidget {
       ],
     );
   }
-
-
-  
-
-
-
-
-
 }

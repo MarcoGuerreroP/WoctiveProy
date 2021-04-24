@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Collection/Firestore.dart';
 import 'package:flutter_auth/Data/services/authentication.dart';
 import 'package:flutter_auth/Screens/CheckValidator/chekvalidatorpage.dart';
 // import 'package:flutter_auth/Screens/Home/home_screen.dart';
@@ -24,6 +27,8 @@ class _BodyState extends State<Body> {
 
   final TextEditingController _emailController = TextEditingController();
 
+  final TextEditingController _userController = TextEditingController();
+
   final TextEditingController _passwordController = TextEditingController();
 
   final TextEditingController _confirmpasswordController =
@@ -48,6 +53,12 @@ class _BodyState extends State<Body> {
               SvgPicture.asset(
                 "assets/icons/signup.svg",
                 height: size.height * 0.35,
+              ),
+              RoundedInputField(
+                keyboardtype: TextInputType.name,
+                controller: _userController,
+                hintText: 'Usuario',
+                onChanged: (value) {},
               ),
               RoundedInputField(
                 keyboardtype: TextInputType.emailAddress,
@@ -118,6 +129,14 @@ class _BodyState extends State<Body> {
                   } else {
                     Navigator.pushReplacementNamed(
                         context, CheckPageValidator.routeName);
+                  }
+                  try {
+                    await Firebase.initializeApp();
+                    User updateUser = FirebaseAuth.instance.currentUser;
+                    updateUser.updateProfile(displayName: _userController.text);
+                    userSetup(_userController.text);
+                  } catch (e) {
+                    print(e.toString());
                   }
                 },
               ),

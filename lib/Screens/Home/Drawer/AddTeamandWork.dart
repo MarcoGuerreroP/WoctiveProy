@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/AddWork/Addwork.dart';
 
 class AddTeamandWork extends StatelessWidget {
   static final routeName = 'AddTeamandWork';
@@ -26,7 +27,10 @@ class AddTeamandWork extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
               color: Colors.white,
               child: Text("Tarea"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddWork()));
+              },
             ),
           ],
         ),
