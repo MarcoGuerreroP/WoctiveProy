@@ -26,9 +26,9 @@ class Body extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)  {
     Size size = MediaQuery.of(context).size;
-    return Form(
+  return Form(
       key: _formKey,
       child: Background(
         child: SingleChildScrollView(

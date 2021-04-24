@@ -16,15 +16,21 @@ class AddTeamandWork extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlatButton(
-              padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
-              color: Colors.white,
+            TextButton(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
+                primary: Colors.white,
+              ),
+              
+              
               child: Text("Equipo"),
               onPressed: () {},
             ),
-            FlatButton(
-              padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
-              color: Colors.white,
+            TextButton(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
+                primary: Colors.white,
+              ),
               child: Text("Tarea"),
               onPressed: () {},
             ),
