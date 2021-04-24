@@ -43,7 +43,6 @@ class Body extends StatelessWidget {
               SvgPicture.asset(
                 "assets/icons/login.svg",
                 height: size.height * 0.35,
-                color: Colors.black,
               ),
               SizedBox(height: size.height * 0.03),
               RoundedInputField(
