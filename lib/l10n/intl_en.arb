@@ -1,11 +1,32 @@
 {
-    "welcometowoctive" : "Welcome to Woctive",
+    "language": "English",
+    "@language":{
+      "description": "The current Language"
+    },
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+      "description": "A programmer greeting"
+    },
+    "hello": "Hello {username}",
+    "@hello": {
+      "description": "A welcome message",
+      "placeholders": {
+         "username": {
+           "type": "String"
+         }
+      }
+    },
+    "welcome" : "Welcome to",
+    "woactive":" Woctive",
+    "newto":"New to Woctive?",
     "login" : "Log in",
     "signup" : "Sign up",
     "email" : "Email",
     "password" : "Password",
     "confirmpassword" : "Confirm Password",
+    "goback":"Go Back",
     "pleasereenterpassword" : "Please re-enter password",
     "passworddoesnotmatch" : "Password does not match",
-    "pleasesupplyavalidemail" : "Please supply a valid email"
+    "pleasesupplyavalidemail" : "Please supply a valid email",
+    "team" : "team"
 }

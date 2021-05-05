@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a es_MX locale. All the
+// This is a library that provides messages for a es locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -17,18 +17,27 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'es_MX';
+  String get localeName => 'es';
+
+  static m0(username) => "Hola ${username}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "confirmpassword" : MessageLookupByLibrary.simpleMessage("Confirmar contraseña"),
     "email" : MessageLookupByLibrary.simpleMessage("Correo electronico"),
+    "goback" : MessageLookupByLibrary.simpleMessage("Regresar"),
+    "hello" : m0,
+    "helloWorld" : MessageLookupByLibrary.simpleMessage("Hola Mundo!"),
+    "language" : MessageLookupByLibrary.simpleMessage("Español"),
     "login" : MessageLookupByLibrary.simpleMessage("Iniciar sesion"),
+    "newto" : MessageLookupByLibrary.simpleMessage("¿Nuevo en Woctive?"),
     "password" : MessageLookupByLibrary.simpleMessage("Contraseña"),
     "passworddoesnotmatch" : MessageLookupByLibrary.simpleMessage("Las contraseñas no coinciden"),
     "pleasereenterpassword" : MessageLookupByLibrary.simpleMessage("Vuelva a ingresar la contraseña"),
     "pleasesupplyavalidemail" : MessageLookupByLibrary.simpleMessage("Ingresa un email valido"),
     "signup" : MessageLookupByLibrary.simpleMessage("Registrarse"),
-    "welcometowoctive" : MessageLookupByLibrary.simpleMessage("Bienvenido a Woctive")
+    "team" : MessageLookupByLibrary.simpleMessage("equipo"),
+    "welcome" : MessageLookupByLibrary.simpleMessage("Bienvenido a"),
+    "woactive" : MessageLookupByLibrary.simpleMessage(" Woctive")
   };
 }

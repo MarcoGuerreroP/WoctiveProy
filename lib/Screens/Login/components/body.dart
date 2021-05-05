@@ -12,7 +12,6 @@ import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
-import 'package:flutter_auth/generated/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 export 'package:flutter_auth/Screens/Login/components/body.dart';
 
@@ -27,9 +26,9 @@ class Body extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
 
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-  return Form(
+    return Form(
       key: _formKey,
       child: Background(
         child: SingleChildScrollView(
@@ -47,7 +46,7 @@ class Body extends StatelessWidget {
               ),
               SizedBox(height: size.height * 0.03),
               RoundedInputField(
-                hintText: S.current.email,
+                hintText: 'Email',
                 onChanged: (value) {
                   _emailController.text = value.trim();
                 },
@@ -60,7 +59,7 @@ class Body extends StatelessWidget {
                 },
               ),
               RoundedButton(
-                text: S.current.login,
+                text: 'Iniciar sesion',
                 press: () async {
                   if (_emailController.text.isEmpty ||
                       _passwordController.text.isEmpty) {

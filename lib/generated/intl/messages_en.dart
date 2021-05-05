@@ -19,16 +19,25 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static m0(username) => "Hello ${username}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "confirmpassword" : MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "email" : MessageLookupByLibrary.simpleMessage("Email"),
+    "goback" : MessageLookupByLibrary.simpleMessage("Go Back"),
+    "hello" : m0,
+    "helloWorld" : MessageLookupByLibrary.simpleMessage("Hello World!"),
+    "language" : MessageLookupByLibrary.simpleMessage("English"),
     "login" : MessageLookupByLibrary.simpleMessage("Log in"),
+    "newto" : MessageLookupByLibrary.simpleMessage("New to Woctive?"),
     "password" : MessageLookupByLibrary.simpleMessage("Password"),
     "passworddoesnotmatch" : MessageLookupByLibrary.simpleMessage("Password does not match"),
     "pleasereenterpassword" : MessageLookupByLibrary.simpleMessage("Please re-enter password"),
     "pleasesupplyavalidemail" : MessageLookupByLibrary.simpleMessage("Please supply a valid email"),
     "signup" : MessageLookupByLibrary.simpleMessage("Sign up"),
-    "welcometowoctive" : MessageLookupByLibrary.simpleMessage("Welcome to Woctive")
+    "team" : MessageLookupByLibrary.simpleMessage("team"),
+    "welcome" : MessageLookupByLibrary.simpleMessage("Welcome to"),
+    "woactive" : MessageLookupByLibrary.simpleMessage(" Woctive")
   };
 }

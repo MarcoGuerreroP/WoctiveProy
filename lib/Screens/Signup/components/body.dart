@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,6 @@ import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
-import 'package:flutter_auth/generated/l10n.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatefulWidget {
@@ -27,7 +25,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   final AuthService _auth = AuthService();
   final CollecionService _colleccion = CollecionService();
-  
+
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _userController = TextEditingController();
@@ -68,12 +66,12 @@ class _BodyState extends State<Body> {
               RoundedInputField(
                 keyboardtype: TextInputType.emailAddress,
                 controller: _emailController,
-                hintText: S.current.email,
+                hintText: 'Correo electronico',
                 onChanged: (value) {},
               ),
               RoundedPasswordField(
                 keyboardType: TextInputType.text,
-                hintText: S.current.password,
+                hintText: 'Constraseña',
                 controller: _passwordController,
                 validator: (String value) {
                   if (value.isEmpty) {
@@ -86,15 +84,15 @@ class _BodyState extends State<Body> {
               RoundedPasswordField(
                 keyboardType: TextInputType.text,
                 controller: _confirmpasswordController,
-                hintText: S.current.confirmpassword,
+                hintText: 'Confirmar contraseña',
                 validator: (String value) {
                   if (value.isEmpty) {
-                    return S.current.pleasereenterpassword;
+                    return 'Porfavor, ingresa una contraseña';
                   }
 
                   if (_passwordController.text !=
                       _confirmpasswordController.text) {
-                    return S.current.passworddoesnotmatch;
+                    return 'La contraseña no coincide';
                   }
 
                   return null;
@@ -103,18 +101,19 @@ class _BodyState extends State<Body> {
               Row(
                 children: [
                   Text('Eres Admnistrador'),
-                  Checkbox(value: isAdmin, onChanged: (bool newValue){
-                    setState(() {
+                  Checkbox(
+                    value: isAdmin,
+                    onChanged: (bool newValue) {
+                      setState(() {
                         isAdmin = newValue;
-                    });
-
-                  }, activeColor: Colors.blue,
+                      });
+                    },
+                    activeColor: Colors.blue,
                   )
                 ],
               ),
-
               RoundedButton(
-                text: S.current.signup,
+                text: "Registrarse",
                 press: () async {
                   if (_emailController.text.isEmpty ||
                       _passwordController.text.isEmpty) {
@@ -142,7 +141,7 @@ class _BodyState extends State<Body> {
                       _emailController.text, _passwordController.text);
                   if (result == null) {
                     setState(() {
-                      S.current.pleasesupplyavalidemail;
+                      print('Valida tu correo');
                     });
                   } else {
                     Navigator.pushReplacementNamed(
@@ -152,7 +151,7 @@ class _BodyState extends State<Body> {
                     // await Firebase.initializeApp();
                     User updateUser = FirebaseAuth.instance.currentUser;
                     updateUser.updateProfile(displayName: _userController.text);
-                     _colleccion.userSetup(_userController.text);
+                    _colleccion.userSetup(_userController.text);
                   } catch (e) {
                     print(e.toString());
                   }

@@ -35,11 +35,61 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Welcome to Woctive`
-  String get welcometowoctive {
+  /// `English`
+  String get language {
     return Intl.message(
-      'Welcome to Woctive',
-      name: 'welcometowoctive',
+      'English',
+      name: 'language',
+      desc: 'The current Language',
+      args: [],
+    );
+  }
+
+  /// `Hello World!`
+  String get helloWorld {
+    return Intl.message(
+      'Hello World!',
+      name: 'helloWorld',
+      desc: 'A programmer greeting',
+      args: [],
+    );
+  }
+
+  /// `Hello {username}`
+  String hello(Object username) {
+    return Intl.message(
+      'Hello $username',
+      name: 'hello',
+      desc: 'A welcome message',
+      args: [username],
+    );
+  }
+
+  /// `Welcome to`
+  String get welcome {
+    return Intl.message(
+      'Welcome to',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Woctive`
+  String get woactive {
+    return Intl.message(
+      ' Woctive',
+      name: 'woactive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New to Woctive?`
+  String get newto {
+    return Intl.message(
+      'New to Woctive?',
+      name: 'newto',
       desc: '',
       args: [],
     );
@@ -95,6 +145,16 @@ class S {
     );
   }
 
+  /// `Go Back`
+  String get goback {
+    return Intl.message(
+      'Go Back',
+      name: 'goback',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please re-enter password`
   String get pleasereenterpassword {
     return Intl.message(
@@ -124,6 +184,16 @@ class S {
       args: [],
     );
   }
+
+  /// `team`
+  String get team {
+    return Intl.message(
+      'team',
+      name: 'team',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -132,7 +202,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'es', countryCode: 'MX'),
+      Locale.fromSubtags(languageCode: 'es'),
     ];
   }
 

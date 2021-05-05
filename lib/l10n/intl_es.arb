@@ -1,11 +1,19 @@
 {
-    "welcometowoctive" : "Bienvenido a Woctive",
+    "language": "Español",
+    "helloWorld": "Hola Mundo!",
+    "hello": "Hola {username}",
+    "welcome" : "Bienvenido a",
+    "woactive":" Woctive",
+    "newto":"¿Nuevo en Woctive?",
     "login" : "Iniciar sesion",
     "signup" : "Registrarse",
+    "goback":"Regresar",
     "email" : "Correo electronico",
     "password" : "Contraseña",
     "confirmpassword" : "Confirmar contraseña",
     "pleasereenterpassword" : "Vuelva a ingresar la contraseña",
     "passworddoesnotmatch" : "Las contraseñas no coinciden",
-    "pleasesupplyavalidemail" : "Ingresa un email valido"
+    "pleasesupplyavalidemail" : "Ingresa un email valido",
+    "team":"equipo"
+    
 }
