@@ -1,12 +1,9 @@
 {
     "language": "Español",
-    "helloWorld": "Hola Mundo!",
-    "hello": "Hola {username}",
-    "welcome" : "Bienvenido a",
-    "woactive":" Woctive",
-    "newto":"¿Nuevo en Woctive?",
     "login" : "Iniciar sesion",
+    "login2" : " Inicia sesion",
     "signup" : "Registrarse",
+    "signup2" : " Registrate",
     "goback":"Regresar",
     "email" : "Correo electronico",
     "password" : "Contraseña",
@@ -14,6 +11,22 @@
     "pleasereenterpassword" : "Vuelva a ingresar la contraseña",
     "passworddoesnotmatch" : "Las contraseñas no coinciden",
     "pleasesupplyavalidemail" : "Ingresa un email valido",
-    "team":"equipo"
+    "team":"Equipo",
+    "donthaveanaccount":"¿No tienes una cuenta?",
+    "alreadyhaveanaccount": "¿Ya tienes una cuenta?",
+    "user": "Usuario",
+    "youareadministrator": "¿Eres administrador?",
+    "settings": "Ajustes",
+    "profile": "Perfil",
+    "messages": "Mensajes",
+    "saved": "Guardar",
+    "favorites": "Favoritos",
+    "homework": "Tareas",
+    "logout": "Cerrar sesion",
+    "missinginfo": "Falta informacion por agregar, vuelve a intentarlo",
+    "loginsuccess": "Inicion de sesion exitoso",
+    "enterpassword" : "Porfavor, ingresa una contraseña",
+    "dontmatchpassword" : "Las contraseñas no coinciden",
+    "validemail" : "Valida tu correo"
     
 }

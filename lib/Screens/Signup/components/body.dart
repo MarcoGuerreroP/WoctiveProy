@@ -1,20 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Collection/Firestore.dart';
-// import 'package:flutter_auth/Collection/Firestore.dart';
 import 'package:flutter_auth/Data/services/authentication.dart';
 import 'package:flutter_auth/Screens/CheckValidator/chekvalidatorpage.dart';
-// import 'package:flutter_auth/Screens/Home/home_screen.dart';
-
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Signup/components/background.dart';
-import 'package:flutter_auth/Screens/Signup/components/or_divider.dart';
-import 'package:flutter_auth/Screens/Signup/components/social_icon.dart';
 import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatefulWidget {
@@ -49,7 +44,7 @@ class _BodyState extends State<Body> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "SIGNUP",
+                "",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: size.height * 0.03),
@@ -60,22 +55,22 @@ class _BodyState extends State<Body> {
               RoundedInputField(
                 keyboardtype: TextInputType.name,
                 controller: _userController,
-                hintText: 'Usuario',
+                hintText: AppLocalizations.of(context).user,
                 onChanged: (value) {},
               ),
               RoundedInputField(
                 keyboardtype: TextInputType.emailAddress,
                 controller: _emailController,
-                hintText: 'Correo electronico',
+                hintText: AppLocalizations.of(context).email,
                 onChanged: (value) {},
               ),
               RoundedPasswordField(
                 keyboardType: TextInputType.text,
-                hintText: 'Constraseña',
+                hintText: AppLocalizations.of(context).password,
                 controller: _passwordController,
                 validator: (String value) {
                   if (value.isEmpty) {
-                    return 'Please a Enter Password';
+                    return AppLocalizations.of(context).enterpassword;
                   } else {
                     return null;
                   }
@@ -84,15 +79,15 @@ class _BodyState extends State<Body> {
               RoundedPasswordField(
                 keyboardType: TextInputType.text,
                 controller: _confirmpasswordController,
-                hintText: 'Confirmar contraseña',
+                hintText: AppLocalizations.of(context).confirmpassword,
                 validator: (String value) {
                   if (value.isEmpty) {
-                    return 'Porfavor, ingresa una contraseña';
+                    return AppLocalizations.of(context).enterpassword;
                   }
 
                   if (_passwordController.text !=
                       _confirmpasswordController.text) {
-                    return 'La contraseña no coincide';
+                    return AppLocalizations.of(context).dontmatchpassword;
                   }
 
                   return null;
@@ -100,7 +95,7 @@ class _BodyState extends State<Body> {
               ),
               Row(
                 children: [
-                  Text('Eres Admnistrador'),
+                  Text(AppLocalizations.of(context).youareadministrator),
                   Checkbox(
                     value: isAdmin,
                     onChanged: (bool newValue) {
@@ -113,14 +108,13 @@ class _BodyState extends State<Body> {
                 ],
               ),
               RoundedButton(
-                text: "Registrarse",
+                text: AppLocalizations.of(context).signup,
                 press: () async {
                   if (_emailController.text.isEmpty ||
                       _passwordController.text.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: const Text(
-                            'Falta informacion por agregar, vuelve a intentarlo'),
+                        content: Text(AppLocalizations.of(context).missinginfo),
                         backgroundColor: Colors.red,
                       ),
                     );
@@ -131,8 +125,8 @@ class _BodyState extends State<Body> {
                           _passwordController.text) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                          content: const Text(
-                              'Las contraseñas no coinciden, vuelve a intentarlo'),
+                          content: Text(
+                              AppLocalizations.of(context).dontmatchpassword),
                           backgroundColor: Colors.red),
                     );
                     return;
@@ -141,7 +135,7 @@ class _BodyState extends State<Body> {
                       _emailController.text, _passwordController.text);
                   if (result == null) {
                     setState(() {
-                      print('Valida tu correo');
+                      print(AppLocalizations.of(context).validemail);
                     });
                   } else {
                     Navigator.pushReplacementNamed(
@@ -165,24 +159,6 @@ class _BodyState extends State<Body> {
                       context, LoginScreen.routeName);
                 },
               ),
-              OrDivider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  SocalIcon(
-                    iconSrc: "assets/icons/facebook.svg",
-                    press: () {},
-                  ),
-                  SocalIcon(
-                    iconSrc: "assets/icons/twitter.svg",
-                    press: () {},
-                  ),
-                  SocalIcon(
-                    iconSrc: "assets/icons/google-plus.svg",
-                    press: () {},
-                  ),
-                ],
-              )
             ],
           ),
         ),
