@@ -18,23 +18,23 @@ class AddTeamandWork extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextButton(
-              style: TextButton.styleFrom(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
                 primary: Colors.white,
               ),
               child: Text(AppLocalizations.of(context).team),
               onPressed: () {},
             ),
-            TextButton(
-              style: TextButton.styleFrom(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50.0),
                 primary: Colors.white,
               ),
-              child: Text("Tarea"),
+              child: Text("Proyect"),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AddWork()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AddWork()));
+                    
               },
             ),
           ],

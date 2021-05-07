@@ -25,8 +25,10 @@ class AuthService {
     try {
       final UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-
-      User user = result.user;
+           User user = result.user;
+          
+      // await DatabaseService(uid: user.uid).createAddProtect('inicial', 'ejmeplo', 'undia', 'un equipo');
+     
       return _userFirebase(user);
     } catch (error) {
       print(error.toString());
@@ -38,7 +40,7 @@ class AuthService {
     try {
       final UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
-
+      
       User user = result.user;
       return _userFirebase(user);
     } catch (error) {

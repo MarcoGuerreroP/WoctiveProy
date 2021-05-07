@@ -2,6 +2,7 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Home/Drawer/AddTeamandWork.dart';
 import 'package:flutter_auth/Screens/Home/Drawer/drawer_screen.dart';
+import 'package:flutter_auth/Screens/Home/Proyect/ListProyects.dart';
 import 'package:flutter_auth/Screens/Home/home_screen.dart';
 
 class Home2 extends StatefulWidget {
@@ -61,7 +62,11 @@ class _Home2State extends State<Home2> {
           ),
           BubbleBottomBarItem(
             backgroundColor: Colors.white,
-            icon: Icon(Icons.note_add_rounded, color: Colors.orange),
+            icon: TextButton(child: Text( "Proyectos"),onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ListProyects()));
+            },),
+              
+            
             activeIcon: Icon(Icons.note_add_rounded, color: Colors.white),
             title: Text('Mis proyectos'),
           ),
@@ -69,12 +74,14 @@ class _Home2State extends State<Home2> {
       ),
       body: HomeScreen(),
       appBar: AppBar(
+        
           title: Text(
             'WOCTIVE',
             style: TextStyle(color: Colors.white),
           ),
-          backgroundColor: Colors.grey.shade900),
+          backgroundColor: Colors.white),
       drawer: DrawerScreen(),
     );
   }
 }
+

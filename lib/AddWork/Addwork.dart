@@ -19,6 +19,7 @@ class _AddWorkState extends State<AddWork> {
 
   final TextEditingController _priorityController = TextEditingController();
 
+  // final TextEditingController _dateandtimeController = TextEditingController();
   String getText() {
     if (dateTime == null) {
       return 'Select DateTime';
@@ -36,6 +37,7 @@ class _AddWorkState extends State<AddWork> {
             TextField(
               controller: _nameworkController,
               decoration: InputDecoration(
+                labelStyle: TextStyle(color: Colors.white70),
                 labelText: 'Nombre de la tarea',
                 border: OutlineInputBorder(),
               ),
@@ -43,6 +45,7 @@ class _AddWorkState extends State<AddWork> {
             TextField(
               controller: _proyectController,
               decoration: InputDecoration(
+                labelStyle: TextStyle(color: Colors.white70),
                 labelText: 'Nombre del proyecto',
                 border: OutlineInputBorder(),
               ),
@@ -50,6 +53,7 @@ class _AddWorkState extends State<AddWork> {
             TextField(
               controller: _priorityController,
               decoration: InputDecoration(
+                labelStyle: TextStyle(color: Colors.white70),
                 labelText: 'Prioridad',
                 border: OutlineInputBorder(),
               ),
@@ -65,7 +69,7 @@ class _AddWorkState extends State<AddWork> {
               primary: Colors.white,
               ),
               
-              child: Text("Equipo"),
+              child: Text("Guardar"),
               onPressed: () async {
                 try {
                   //await Firebase.initializeApp();
@@ -82,7 +86,7 @@ class _AddWorkState extends State<AddWork> {
       ),
       appBar: AppBar(
           title: Text(
-            'Crear nueva tarea',
+            'Crear nuevo proyecto',
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Colors.grey.shade900),
