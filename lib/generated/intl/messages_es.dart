@@ -19,25 +19,36 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
-  static m0(username) => "Hola ${username}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "alreadyhaveanaccount" : MessageLookupByLibrary.simpleMessage("¿Ya tienes una cuenta?"),
     "confirmpassword" : MessageLookupByLibrary.simpleMessage("Confirmar contraseña"),
+    "donthaveanaccount" : MessageLookupByLibrary.simpleMessage("¿No tienes una cuenta?"),
+    "dontmatchpassword" : MessageLookupByLibrary.simpleMessage("Las contraseñas no coinciden"),
     "email" : MessageLookupByLibrary.simpleMessage("Correo electronico"),
+    "enterpassword" : MessageLookupByLibrary.simpleMessage("Porfavor, ingresa una contraseña"),
+    "favorites" : MessageLookupByLibrary.simpleMessage("Favoritos"),
     "goback" : MessageLookupByLibrary.simpleMessage("Regresar"),
-    "hello" : m0,
-    "helloWorld" : MessageLookupByLibrary.simpleMessage("Hola Mundo!"),
+    "homework" : MessageLookupByLibrary.simpleMessage("Tareas"),
     "language" : MessageLookupByLibrary.simpleMessage("Español"),
     "login" : MessageLookupByLibrary.simpleMessage("Iniciar sesion"),
-    "newto" : MessageLookupByLibrary.simpleMessage("¿Nuevo en Woctive?"),
+    "login2" : MessageLookupByLibrary.simpleMessage(" Inicia sesion"),
+    "loginsuccess" : MessageLookupByLibrary.simpleMessage("Inicion de sesion exitoso"),
+    "logout" : MessageLookupByLibrary.simpleMessage("Cerrar sesion"),
+    "messages" : MessageLookupByLibrary.simpleMessage("Mensajes"),
+    "missinginfo" : MessageLookupByLibrary.simpleMessage("Falta informacion por agregar, vuelve a intentarlo"),
     "password" : MessageLookupByLibrary.simpleMessage("Contraseña"),
     "passworddoesnotmatch" : MessageLookupByLibrary.simpleMessage("Las contraseñas no coinciden"),
     "pleasereenterpassword" : MessageLookupByLibrary.simpleMessage("Vuelva a ingresar la contraseña"),
     "pleasesupplyavalidemail" : MessageLookupByLibrary.simpleMessage("Ingresa un email valido"),
+    "profile" : MessageLookupByLibrary.simpleMessage("Perfil"),
+    "saved" : MessageLookupByLibrary.simpleMessage("Guardar"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Ajustes"),
     "signup" : MessageLookupByLibrary.simpleMessage("Registrarse"),
-    "team" : MessageLookupByLibrary.simpleMessage("equipo"),
-    "welcome" : MessageLookupByLibrary.simpleMessage("Bienvenido a"),
-    "woactive" : MessageLookupByLibrary.simpleMessage(" Woctive")
+    "signup2" : MessageLookupByLibrary.simpleMessage(" Registrate"),
+    "team" : MessageLookupByLibrary.simpleMessage("Equipo"),
+    "user" : MessageLookupByLibrary.simpleMessage("Usuario"),
+    "validemail" : MessageLookupByLibrary.simpleMessage("Valida tu correo"),
+    "youareadministrator" : MessageLookupByLibrary.simpleMessage("¿Eres administrador?")
   };
 }

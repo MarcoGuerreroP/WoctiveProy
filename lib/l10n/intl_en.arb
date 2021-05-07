@@ -1,32 +1,31 @@
 {
-    "language": "English",
-    "@language":{
-      "description": "The current Language"
-    },
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-      "description": "A programmer greeting"
-    },
-    "hello": "Hello {username}",
-    "@hello": {
-      "description": "A welcome message",
-      "placeholders": {
-         "username": {
-           "type": "String"
-         }
-      }
-    },
-    "welcome" : "Welcome to",
-    "woactive":" Woctive",
-    "newto":"New to Woctive?",
-    "login" : "Log in",
-    "signup" : "Sign up",
-    "email" : "Email",
-    "password" : "Password",
-    "confirmpassword" : "Confirm Password",
-    "goback":"Go Back",
-    "pleasereenterpassword" : "Please re-enter password",
-    "passworddoesnotmatch" : "Password does not match",
-    "pleasesupplyavalidemail" : "Please supply a valid email",
-    "team" : "team"
+  "language": "English",
+  "login" : "Log in",
+  "login2" : " Log in",
+  "signup" : "Sign up",
+  "signup2" : " Sign up",
+  "goback":"Go back",
+  "email" : "Email",
+  "password" : "Password",
+  "confirmpassword" : "Confirm password",
+  "pleasereenterpassword" : "Please enter password",
+  "passworddoesnotmatch" : "Password does not match",
+  "pleasesupplyavalidemail" : "Please supply a valid email",
+  "team":"Team",
+  "donthaveanaccount":"Dont have an account?",
+  "alreadyhaveanaccount": "Already have an account?",
+  "user": "User",
+  "youareadministrator": "You are administrator?",
+  "settings": "Settings",
+  "profile": "Profile",
+  "messages": "Messages",
+  "saved": "Saves",
+  "favorites": "Favorites",
+  "homework": "Homework",
+  "logout": "Log out",
+  "missinginfo": "Missing information, try again",
+  "loginsuccess": "Login Successful",
+  "enterpassword" : "Please a Enter Password",
+  "dontmatchpassword" : "Passwords does not match",
+  "validemail" : "Validate your email"
 }

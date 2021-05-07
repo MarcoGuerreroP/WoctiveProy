@@ -4,7 +4,6 @@ import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
 import 'package:flutter_auth/Screens/Welcome/widget/language_picker_widget.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/constants.dart';
-//import 'package:flutter_auth/generated/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -48,7 +47,7 @@ class _BodyState extends State<Body> {
                 },
               ),
               RoundedButton(
-                text: 'Registrarse',
+                text: AppLocalizations.of(context).signup,
                 color: kPrimaryLightColor,
                 textColor: Colors.black,
                 press: () {

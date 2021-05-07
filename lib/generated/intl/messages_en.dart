@@ -19,25 +19,36 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static m0(username) => "Hello ${username}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "confirmpassword" : MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "alreadyhaveanaccount" : MessageLookupByLibrary.simpleMessage("Already have an account?"),
+    "confirmpassword" : MessageLookupByLibrary.simpleMessage("Confirm password"),
+    "donthaveanaccount" : MessageLookupByLibrary.simpleMessage("Dont have an account?"),
+    "dontmatchpassword" : MessageLookupByLibrary.simpleMessage("Passwords does not match"),
     "email" : MessageLookupByLibrary.simpleMessage("Email"),
-    "goback" : MessageLookupByLibrary.simpleMessage("Go Back"),
-    "hello" : m0,
-    "helloWorld" : MessageLookupByLibrary.simpleMessage("Hello World!"),
+    "enterpassword" : MessageLookupByLibrary.simpleMessage("Please a Enter Password"),
+    "favorites" : MessageLookupByLibrary.simpleMessage("Favorites"),
+    "goback" : MessageLookupByLibrary.simpleMessage("Go back"),
+    "homework" : MessageLookupByLibrary.simpleMessage("Homework"),
     "language" : MessageLookupByLibrary.simpleMessage("English"),
     "login" : MessageLookupByLibrary.simpleMessage("Log in"),
-    "newto" : MessageLookupByLibrary.simpleMessage("New to Woctive?"),
+    "login2" : MessageLookupByLibrary.simpleMessage(" Log in"),
+    "loginsuccess" : MessageLookupByLibrary.simpleMessage("Login Successful"),
+    "logout" : MessageLookupByLibrary.simpleMessage("Log out"),
+    "messages" : MessageLookupByLibrary.simpleMessage("Messages"),
+    "missinginfo" : MessageLookupByLibrary.simpleMessage("Missing information, try again"),
     "password" : MessageLookupByLibrary.simpleMessage("Password"),
     "passworddoesnotmatch" : MessageLookupByLibrary.simpleMessage("Password does not match"),
-    "pleasereenterpassword" : MessageLookupByLibrary.simpleMessage("Please re-enter password"),
+    "pleasereenterpassword" : MessageLookupByLibrary.simpleMessage("Please enter password"),
     "pleasesupplyavalidemail" : MessageLookupByLibrary.simpleMessage("Please supply a valid email"),
+    "profile" : MessageLookupByLibrary.simpleMessage("Profile"),
+    "saved" : MessageLookupByLibrary.simpleMessage("Saves"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
     "signup" : MessageLookupByLibrary.simpleMessage("Sign up"),
-    "team" : MessageLookupByLibrary.simpleMessage("team"),
-    "welcome" : MessageLookupByLibrary.simpleMessage("Welcome to"),
-    "woactive" : MessageLookupByLibrary.simpleMessage(" Woctive")
+    "signup2" : MessageLookupByLibrary.simpleMessage(" Sign up"),
+    "team" : MessageLookupByLibrary.simpleMessage("Team"),
+    "user" : MessageLookupByLibrary.simpleMessage("User"),
+    "validemail" : MessageLookupByLibrary.simpleMessage("Validate your email"),
+    "youareadministrator" : MessageLookupByLibrary.simpleMessage("You are administrator?")
   };
 }

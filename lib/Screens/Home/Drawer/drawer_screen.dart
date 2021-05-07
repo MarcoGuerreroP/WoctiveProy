@@ -2,8 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Data/services/authentication.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
-
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DrawerScreen extends StatefulWidget {
   final Widget child;
@@ -40,7 +39,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   FirebaseAuth.instance.currentUser.displayName,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 11,
+                      fontSize: 13,
                       fontWeight: FontWeight.bold),
                 ),
                 FutureBuilder(
@@ -57,42 +56,42 @@ class _DrawerScreenState extends State<DrawerScreen> {
             Column(
               children: <Widget>[
                 NewRow(
-                  text: 'Settings',
+                  text: AppLocalizations.of(context).settings,
                   icon: Icons.error_outline,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 NewRow(
-                  text: 'Profile',
+                  text: AppLocalizations.of(context).profile,
                   icon: Icons.person_outline,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 NewRow(
-                  text: 'Messages',
+                  text: AppLocalizations.of(context).messages,
                   icon: Icons.chat_bubble_outline,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 NewRow(
-                  text: 'Saved',
+                  text: AppLocalizations.of(context).saved,
                   icon: Icons.bookmark_border,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 NewRow(
-                  text: 'Favorites',
+                  text: AppLocalizations.of(context).favorites,
                   icon: Icons.favorite_border,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 NewRow(
-                  text: 'Homework',
+                  text: AppLocalizations.of(context).homework,
                   icon: Icons.lightbulb_outline,
                 ),
                 SizedBox(
@@ -116,7 +115,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                         context, LoginScreen.routeName);
                   },
                   child: Text(
-                    'Log out',
+                    AppLocalizations.of(context).logout,
                     style: TextStyle(color: Colors.white.withOpacity(0.5)),
                   ),
                 )

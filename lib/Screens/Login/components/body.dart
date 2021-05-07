@@ -1,11 +1,6 @@
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_auth/Data/services/authentication.dart';
 import 'package:flutter_auth/Screens/Home/home2.dart';
-
-// import 'package:flutter_auth/Screens/Home/home_screen.dart';
-
 import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
 import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
@@ -14,11 +9,12 @@ import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
 export 'package:flutter_auth/Screens/Login/components/body.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // ignore: must_be_immutable
 class Body extends StatelessWidget {
   final AuthService _auth = AuthService();
-  // final CollecionService _colleccion = CollecionService();
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController();
@@ -35,10 +31,6 @@ class Body extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "LOGIN",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
               SizedBox(height: size.height * 0.03),
               SvgPicture.asset(
                 "assets/icons/login.svg",
@@ -46,27 +38,27 @@ class Body extends StatelessWidget {
               ),
               SizedBox(height: size.height * 0.03),
               RoundedInputField(
-                hintText: 'Email',
+                hintText: AppLocalizations.of(context).email,
                 onChanged: (value) {
                   _emailController.text = value.trim();
                 },
                 keyboardtype: TextInputType.emailAddress,
               ),
               RoundedPasswordField(
+                hintText: AppLocalizations.of(context).password,
                 keyboardType: TextInputType.visiblePassword,
                 onChanged: (value) {
                   _passwordController.text = value.trim();
                 },
               ),
               RoundedButton(
-                text: 'Iniciar sesion',
+                text: AppLocalizations.of(context).login,
                 press: () async {
                   if (_emailController.text.isEmpty ||
                       _passwordController.text.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: const Text(
-                            'Falta informacion por agregar, vuelve a intentarlo'),
+                        content: Text(AppLocalizations.of(context).missinginfo),
                         backgroundColor: Colors.red,
                       ),
                     );
@@ -79,7 +71,8 @@ class Body extends StatelessWidget {
                       if (result != null) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: const Text('Inicion de sesion exitoso'),
+                            content:
+                                Text(AppLocalizations.of(context).loginsuccess),
                             backgroundColor: Colors.green,
                           ),
                         );

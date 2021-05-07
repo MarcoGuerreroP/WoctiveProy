@@ -40,56 +40,6 @@ class S {
     return Intl.message(
       'English',
       name: 'language',
-      desc: 'The current Language',
-      args: [],
-    );
-  }
-
-  /// `Hello World!`
-  String get helloWorld {
-    return Intl.message(
-      'Hello World!',
-      name: 'helloWorld',
-      desc: 'A programmer greeting',
-      args: [],
-    );
-  }
-
-  /// `Hello {username}`
-  String hello(Object username) {
-    return Intl.message(
-      'Hello $username',
-      name: 'hello',
-      desc: 'A welcome message',
-      args: [username],
-    );
-  }
-
-  /// `Welcome to`
-  String get welcome {
-    return Intl.message(
-      'Welcome to',
-      name: 'welcome',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// ` Woctive`
-  String get woactive {
-    return Intl.message(
-      ' Woctive',
-      name: 'woactive',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `New to Woctive?`
-  String get newto {
-    return Intl.message(
-      'New to Woctive?',
-      name: 'newto',
       desc: '',
       args: [],
     );
@@ -105,11 +55,41 @@ class S {
     );
   }
 
+  /// ` Log in`
+  String get login2 {
+    return Intl.message(
+      ' Log in',
+      name: 'login2',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign up`
   String get signup {
     return Intl.message(
       'Sign up',
       name: 'signup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Sign up`
+  String get signup2 {
+    return Intl.message(
+      ' Sign up',
+      name: 'signup2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go back`
+  String get goback {
+    return Intl.message(
+      'Go back',
+      name: 'goback',
       desc: '',
       args: [],
     );
@@ -135,30 +115,20 @@ class S {
     );
   }
 
-  /// `Confirm Password`
+  /// `Confirm password`
   String get confirmpassword {
     return Intl.message(
-      'Confirm Password',
+      'Confirm password',
       name: 'confirmpassword',
       desc: '',
       args: [],
     );
   }
 
-  /// `Go Back`
-  String get goback {
-    return Intl.message(
-      'Go Back',
-      name: 'goback',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please re-enter password`
+  /// `Please enter password`
   String get pleasereenterpassword {
     return Intl.message(
-      'Please re-enter password',
+      'Please enter password',
       name: 'pleasereenterpassword',
       desc: '',
       args: [],
@@ -185,11 +155,171 @@ class S {
     );
   }
 
-  /// `team`
+  /// `Team`
   String get team {
     return Intl.message(
-      'team',
+      'Team',
       name: 'team',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dont have an account?`
+  String get donthaveanaccount {
+    return Intl.message(
+      'Dont have an account?',
+      name: 'donthaveanaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get alreadyhaveanaccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyhaveanaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User`
+  String get user {
+    return Intl.message(
+      'User',
+      name: 'user',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are administrator?`
+  String get youareadministrator {
+    return Intl.message(
+      'You are administrator?',
+      name: 'youareadministrator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Messages`
+  String get messages {
+    return Intl.message(
+      'Messages',
+      name: 'messages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saves`
+  String get saved {
+    return Intl.message(
+      'Saves',
+      name: 'saved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorites`
+  String get favorites {
+    return Intl.message(
+      'Favorites',
+      name: 'favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Homework`
+  String get homework {
+    return Intl.message(
+      'Homework',
+      name: 'homework',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out`
+  String get logout {
+    return Intl.message(
+      'Log out',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Missing information, try again`
+  String get missinginfo {
+    return Intl.message(
+      'Missing information, try again',
+      name: 'missinginfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login Successful`
+  String get loginsuccess {
+    return Intl.message(
+      'Login Successful',
+      name: 'loginsuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please a Enter Password`
+  String get enterpassword {
+    return Intl.message(
+      'Please a Enter Password',
+      name: 'enterpassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords does not match`
+  String get dontmatchpassword {
+    return Intl.message(
+      'Passwords does not match',
+      name: 'dontmatchpassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Validate your email`
+  String get validemail {
+    return Intl.message(
+      'Validate your email',
+      name: 'validemail',
       desc: '',
       args: [],
     );
