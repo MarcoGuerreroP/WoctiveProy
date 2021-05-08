@@ -9,7 +9,7 @@ class DatabaseService {
   CollectionReference addproyectCollection = FirebaseFirestore.instance.collection('Proyects');
 
 
-
+  
   Future createAddProtect(String title, String materia, String deadline, String nameteam) async {
     
     await addproyectCollection
@@ -23,11 +23,15 @@ class DatabaseService {
     });
   }
 
+  Future removeProyect(uid) async{
+    await addproyectCollection.doc(uid).delete();
+  }
+
 List<Proyect> proyectsAdds(QuerySnapshot snapshot){
   if(snapshot != null){
     return snapshot.docs.map((e){
       return Proyect(
-        title: e.data()["name"],
+        title: e.data()["title"],
         uid: e.id,
         materia: e.data()["materia"],
         nameteam: e.data()["nameteam"],

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Home/Drawer/AddTeamandWork.dart';
 import 'package:flutter_auth/Screens/Home/Drawer/drawer_screen.dart';
 import 'package:flutter_auth/Screens/Home/Proyect/ListProyects.dart';
-import 'package:flutter_auth/Screens/Home/home_screen.dart';
+import 'package:flutter_auth/Screens/Home/Proyect/ListViewProyects.dart';
+// import 'package:flutter_auth/Screens/Home/home_screen.dart';
 
 class Home2 extends StatefulWidget {
   Home2({Key key}) : super(key: key);
@@ -72,14 +73,16 @@ class _Home2State extends State<Home2> {
           ),
         ],
       ),
-      body: HomeScreen(),
+      body: ListViewProyects(),
       appBar: AppBar(
+        
         
           title: Text(
             'WOCTIVE',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black),
+            
           ),
-          backgroundColor: Colors.white),
+          backgroundColor: Colors.orange),
       drawer: DrawerScreen(),
     );
   }

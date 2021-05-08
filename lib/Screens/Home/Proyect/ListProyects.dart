@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_auth/Collection/Database_Service.dart';
+import 'package:flutter_auth/Screens/Home/home2.dart';
 
 
 
@@ -171,8 +173,20 @@ class _ListProyectsState extends State<ListProyects> {
           if(_nameProyectController.text.isNotEmpty){
             await DatabaseService().createAddProtect(
               _nameProyectController.text.trim(),_nameSubjectController.text.trim(),_datelineSubjectController.text.trim(),_nameofTeamController.text.trim());
-
+              
+              ScaffoldMessenger.of(context).showSnackBar( 
+                        SnackBar(
+                          content: const Text('Proyecto agregado cotrectamente'),
+                          backgroundColor: Colors.green,));
             
+            
+           await Navigator.pushReplacementNamed(
+                      context, Home2.routeName);
+          }else{
+            ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: const Text('Error completa los campos'),
+                          backgroundColor: Colors.red,));
           }
         }, 
         child:Text('Crear Proyecto',style: TextStyle(color: Colors.black),),
