@@ -27,6 +27,17 @@
     "loginsuccess": "Inicion de sesion exitoso",
     "enterpassword" : "Porfavor, ingresa una contraseña",
     "dontmatchpassword" : "Las contraseñas no coinciden",
-    "validemail" : "Valida tu correo"
+    "validemail" : "Verifica tu correo",
+    "addproyect" : "Agregar Proyecto",
+    "nameproyect" : "Nombre del proyecto",
+    "idclass" : "ID de la materia",
+    "duedate" : "Fecha de vencimiento",
+    "nameteam" : "Nombre del equipo",
+    "Errorfillinthefields" : "Error, completa los campos",
+    "createproyect" : "Crear Proyecto",
+    "projectsuccessfullyadded" : "Proyecto agregado correctamente",
+    "start": "Inicio",
+    "proyects" : "Proyectos"
+
     
 }

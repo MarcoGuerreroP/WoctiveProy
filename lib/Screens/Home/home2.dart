@@ -5,6 +5,7 @@ import 'package:flutter_auth/Screens/Home/Drawer/drawer_screen.dart';
 import 'package:flutter_auth/Screens/Home/Proyect/ListProyects.dart';
 import 'package:flutter_auth/Screens/Home/Proyect/ListViewProyects.dart';
 // import 'package:flutter_auth/Screens/Home/home_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home2 extends StatefulWidget {
   Home2({Key key}) : super(key: key);
@@ -59,15 +60,17 @@ class _Home2State extends State<Home2> {
             backgroundColor: Colors.white,
             icon: Icon(Icons.home_rounded, color: Colors.orange),
             activeIcon: Icon(Icons.home_rounded, color: Colors.white),
-            title: Text('Inicio'),
+            title: Text(AppLocalizations.of(context).start),
           ),
           BubbleBottomBarItem(
             backgroundColor: Colors.white,
-            icon: TextButton(child: Text( "Proyectos"),onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ListProyects()));
-            },),
-              
-            
+            icon: TextButton(
+              child: Text(AppLocalizations.of(context).proyects),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ListProyects()));
+              },
+            ),
             activeIcon: Icon(Icons.note_add_rounded, color: Colors.white),
             title: Text('Mis proyectos'),
           ),
@@ -75,16 +78,12 @@ class _Home2State extends State<Home2> {
       ),
       body: ListViewProyects(),
       appBar: AppBar(
-        
-        
           title: Text(
             'WOCTIVE',
             style: TextStyle(color: Colors.black),
-            
           ),
           backgroundColor: Colors.orange),
       drawer: DrawerScreen(),
     );
   }
 }
-

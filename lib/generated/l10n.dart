@@ -324,6 +324,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Add project`
+  String get addproyect {
+    return Intl.message(
+      'Add project',
+      name: 'addproyect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Project's name`
+  String get nameproyect {
+    return Intl.message(
+      'Project\'s name',
+      name: 'nameproyect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ID class`
+  String get idclass {
+    return Intl.message(
+      'ID class',
+      name: 'idclass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Due date`
+  String get duedate {
+    return Intl.message(
+      'Due date',
+      name: 'duedate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name of the team`
+  String get nameteam {
+    return Intl.message(
+      'Name of the team',
+      name: 'nameteam',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error, fill in the fields`
+  String get errorfillinthefields {
+    return Intl.message(
+      'Error, fill in the fields',
+      name: 'errorfillinthefields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Project`
+  String get createproyect {
+    return Intl.message(
+      'Create Project',
+      name: 'createproyect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Project successfully added`
+  String get projectsuccessfullyadded {
+    return Intl.message(
+      'Project successfully added',
+      name: 'projectsuccessfullyadded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start`
+  String get start {
+    return Intl.message(
+      'Start',
+      name: 'start',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proyects`
+  String get proyects {
+    return Intl.message(
+      'Proyects',
+      name: 'proyects',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

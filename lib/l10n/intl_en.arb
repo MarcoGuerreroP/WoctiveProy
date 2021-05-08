@@ -27,5 +27,15 @@
   "loginsuccess": "Login Successful",
   "enterpassword" : "Please a Enter Password",
   "dontmatchpassword" : "Passwords does not match",
-  "validemail" : "Validate your email"
+  "validemail" : "Validate your email",
+  "addproyect" : "Add project",
+  "nameproyect" : "Project's name",
+  "idclass" : "ID class",
+  "duedate" : "Due date",
+  "nameteam" : "Name of the team",
+  "errorfillinthefields" : "Error, fill in the fields",
+  "createproyect" : "Create Project",
+  "projectsuccessfullyadded" : "Project successfully added",
+  "start": "Start",
+  "proyects" : "Proyects"
 }
